@@ -1,13 +1,13 @@
 <html>
 <head>
-<title>Hello World!</title>
+<title>Dev ops build</title>
 </head>
 <body>
-	<h1>Hello World!</h1>
+	<h1>This is the first build</h1>
 	<p>
-		It is now
+		It is now in the production
 		<%= new java.util.Date() %></p>
 	<p>
-		You are coming from 
+		you are in the right place 
 		<%= request.getRemoteAddr()  %></p>
 </body>
