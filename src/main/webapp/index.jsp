@@ -3,7 +3,7 @@
 <title>Dev ops build</title>
 </head>
 <body>
-	<h1>This is the first build</h1>
+	<h1>releasing version 1.1.1</h1>
 	<p>
 		It is now in the production
 		<%= new java.util.Date() %></p>
