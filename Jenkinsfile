@@ -1,25 +1,21 @@
 pipeline {
-    agent any
-    stages {
-        stage('checkout') {
-            steps {	
-		
-                sh 'git clone https://github.com/lohitesh/hello-world-war/'
-            }
-        }
-	stage('Build') {
-            steps {		
-			
-                sh 'mvn clean package'
-            }
-        }
-	stage('Deploy') {
-            steps {		
-			
-                sh 'echo Deployed'
-
-            }
-        }
-	    
-    }
-}
+	    agent any
+	    stages {
+	        stage('Build Docker Image') {
+	            steps {
+			sh 'docker rm -f java_image'
+	                sh 'docker build -t java_image .'
+	                }
+	        }
+	        stage('Deploy step') {
+	            steps {
+	                sh 'docker run -itd -p 8090:8080 --name java_container java_image'       
+	            }
+	        }
+		stage('Push image') {
+		    steps{	
+        		withDockerRegistry([ credentialsId: "Docker_hub_login", url: "" ]) {
+        		sh 'docker push sampadaan/java_image:1.0'
+        	}
+	   }
+	}
