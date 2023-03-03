@@ -8,8 +8,8 @@ pipeline {
 	        }
 	        stage('Deploy step') {
 	            steps {
-			sh 'docker rm -f java_container'
-	                sh 'docker run -itd -p 8091:8080 --name java_container java_image'       
+			sh 'docker rm -f java_project'
+	                sh 'docker run -itd -p 8091:8080 --name java_project java_image'       
 	            }
 	        }
 		stage('Push image') {
