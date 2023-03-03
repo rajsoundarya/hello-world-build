@@ -13,7 +13,7 @@ pipeline {
 	        }
 	        stage('Deploy step') {
 	            steps {
-	                sh 'docker run -itd -p 8090:8080 --name java_container java_image'       
+	                sh 'docker run -itd -p 8091:8080 --name java_container java_image'       
 	            }
 	        }
 		stage('Push image') {
