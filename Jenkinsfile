@@ -3,7 +3,6 @@ pipeline {
 	    stages {
 	        stage('Build Docker Image') {
 	            steps {
-			sh 'docker rm -f java_image'
 	                sh 'docker build -t java_image .'
 	                }
 	        }
@@ -19,6 +18,7 @@ pipeline {
         		     		dockerImage.push("1.0")
 				}
 			}
+			sh 'docker rm -f java_image'
 		    }
         	}
 	     }
