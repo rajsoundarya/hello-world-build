@@ -1,11 +1,6 @@
 pipeline {
 	    agent any
 	    stages {
-		stage('test') {
-	            steps {
-	                sh 'docker images'
-	             }
-	        }
 	        stage('Build Docker Image') {
 	            steps {
 	                sh 'docker build -t java_image .'
