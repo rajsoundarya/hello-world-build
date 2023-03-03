@@ -14,7 +14,7 @@ pipeline {
 	        }
 		stage('Push image') {
 		    steps{	
-		        withDockerRegistry([ credentialsId: "Docker_hub_login", url:""]) {
+		        withDockerRegistry([ credentialsId: "soundarya_image", url:""]) {
                     		sh 'docker tag soundy_image rajsoundarya/soundy_image:$BUILD_NUMBER'
                     		sh 'docker push rajsoundarya/soundy_image:$BUILD_NUMBER' 
                 	}
