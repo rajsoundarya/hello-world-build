@@ -15,7 +15,9 @@ pipeline {
 		stage('Push image') {
 		    steps{	
         		withDockerRegistry([ credentialsId: "Docker_hub_login", url: "" ]) {
-        		sh 'docker push sampadaan/java_image:1.0'
+        		     dockerImage.push("1.0")
+			}
+		    }
         	}
-	   }
+	     }
 	}
