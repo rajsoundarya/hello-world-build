@@ -3,7 +3,7 @@ pipeline {
 	    stages {
 	        stage('Build Docker Image') {
 	            steps {
-	                sh 'docker build -t soundy_image.'
+	                sh 'docker build -t soundy_image .'
 	                }
 	        }
 	        stage('Deploy step') {
