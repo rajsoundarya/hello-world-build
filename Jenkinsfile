@@ -4,7 +4,7 @@ pipeline {
 		stage('test') {
 	            steps {
 	                sh 'docker images'
-	                }
+	             }
 	        }
 	        stage('Build Docker Image') {
 	            steps {
@@ -26,4 +26,5 @@ pipeline {
 		        }
         	     }
 	    	}
+	    }
 	}
