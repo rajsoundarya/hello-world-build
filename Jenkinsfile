@@ -15,8 +15,8 @@ pipeline {
 		stage('Push image') {
 		    steps{	
 		        withDockerRegistry([ credentialsId: "Docker_hub_login", url:""]) {
-                    		sh 'docker tag java_image sampadaan/java_image:$BUILD_NUMBER'
-                    		sh 'docker push sampadaan/java_image:$BUILD_NUMBER' 
+                    		sh 'docker tag java_image rajsoundarya/java_image:$BUILD_NUMBER'
+                    		sh 'docker push rajsoundarya/java_image:$BUILD_NUMBER' 
                 	}
         	     }
 	    	}
